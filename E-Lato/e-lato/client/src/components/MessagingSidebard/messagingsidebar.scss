@@ -1,0 +1,25 @@
+@use '../partials/variables' as *;
+
+
+.messaging-sidebar{
+    display: flex;
+    width: 20rem;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 2rem;
+    
+
+    
+    a{
+        text-decoration: none;
+        color: teal;
+    }
+}
+
+.tab-content{
+    padding-left: 0.5rem;
+    border-right: $Cloud 0.063rem solid;
+    overflow: auto;
+    flex-grow: 1;
+}

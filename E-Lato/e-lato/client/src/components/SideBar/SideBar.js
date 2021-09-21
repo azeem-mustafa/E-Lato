@@ -2,7 +2,7 @@ import React from "react";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import './_sidebar.scss';
-import Images from "../../assets/images";
+import Images from "../../assets/images.js";
 
 
 export const SideBarData = [
