@@ -8,33 +8,40 @@ import useLocalStorage from './components/hooks/useLocalStorage';
 import Dashboard from './components/Dashboard/Dashboard';
 import { RequestsProvider } from './components/Contexts/RequestProvider';
 import { ConversationsProvider } from './components/Contexts/ConversationsProvider';
+import { SocketProvider } from './components/Contexts/SocketProvider';
+import HeroMain from './components/HeroMain/HeroMain';
+import LowerContent from './components/LowerContent/LowerContent';
+
 
 function App() {
-  const [id, setId] = useLocalStorage('id')
+//   const [id, setId] = useLocalStorage('id')
 
-  const dashboard = (
-    <RequestsProvider>
-      <ConversationsProvider id={id}>
-      <Dashboard id={id}/>
-      </ConversationsProvider>
-    </RequestsProvider>
-  )
+//   const dashboard = (
+//     <SocketProvider id={id}>
+//     <RequestsProvider>
+//       <ConversationsProvider id={id}>
+//       <Dashboard id={id}/>
+//       </ConversationsProvider>
+//     </RequestsProvider>
+//     </SocketProvider>
+//   )
 
   return (
-    // <BrowserRouter>
-    //   <Header />
-      id ? dashboard : <Login onIdSubmit={setId}/>
-
+    <BrowserRouter>
+      <Header />
+    {/* //   id ? dashboard : <Login onIdSubmit={setId}/> */}
+      <HeroMain />
+      <LowerContent/>
       
 
-    //   <Switch>
-    //   <Route exact path="/" component={Home}></Route>
+      <Switch>
+      <Route exact path="/" component={Home}></Route>
     
-    //   {/* <Route exact path="/login" component={Login} onIdSubmit={setId}></Route> */}
+       {/* <Route exact path="/login" component={Login} onIdSubmit={setId}></Route> */}
     
-    //   </Switch>
+       </Switch>
 
-    // </BrowserRouter>
+     </BrowserRouter>
   );
 }
 

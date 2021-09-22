@@ -40,7 +40,7 @@ function Header() {
                         return (
                             <li key={index} className={item.cName}>
                                 <Link to={item.path}>
-                                    <img src={item.icon} />
+                                    {item.icon}
                                     <span>{item.title}</span>
                                 </Link>
                             </li>
