@@ -1,0 +1,146 @@
+@use '../partials/variables' as *;
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 95%;
+    margin: 1rem auto 0;
+    word-break: break-all;
+    
+    &__header{
+        background-color: white;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__tabs {
+        padding: 15px;
+        text-align: center;
+        width: 50%;
+        background: rgba(128, 128, 128, 0.075);
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+        box-sizing: content-box;
+        position: relative;
+        outline: none;
+    }
+
+    &__tabs &:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.274);
+    }
+}
+
+.active-tabs {
+    background: white;
+    border-bottom: 1px solid transparent;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 2px);
+        height: 5px;
+        
+    }
+}
+
+button {
+    border: none;
+}
+.content-tabs {
+    flex-grow: 1;
+}
+
+.content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    h2 {
+        padding: 0px 0 5px 0px;
+        margin: 2rem 0;
+    }
+
+    hr {
+        width: 100px;
+        height: 2px;
+        background: #222;
+        margin-bottom: 5px;
+    }
+
+    p {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &__flex-images-1{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+    &__flex-images-2{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.active-content {
+    display: block;
+}
+
+.hero__logo {
+    width: 70px;
+}
+
+.hero__image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover{
+        transition: transform .1s ease-in-out;
+    }
+}
+
+.content__button{
+height: 2rem;
+width: 100%;
+padding: 0rem 1rem;
+color: white;
+background-color: $Indigo;
+border-radius: 1.25rem;
+margin: 1rem 0;
+
+&:hover {
+background-color: $Graphite;
+}
+
+}
+
+

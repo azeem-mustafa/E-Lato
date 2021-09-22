@@ -1,0 +1,47 @@
+@use '../partials/variables' as *;
+
+.login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 2rem;
+
+    &__form{
+        width: 100vw;
+
+        &-flex{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__label{
+        padding-bottom: 1rem;
+    }
+
+    &__input{
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        border-style: none;
+        border: $Cloud 0.063rem solid;
+    }
+
+    &__button{
+        margin-right: 1rem;
+        border-style: none;
+        background-color: $Indigo;
+        color: white;
+        height: 3rem;
+        width: 5rem;
+        border-radius: 0.5rem;
+
+    }
+
+    &__button-two{
+        border-style: none;
+        background-color: $Cloud;
+        height: 3rem;
+        width: 9rem;
+        border-radius: 0.5rem;
+    }
+}
