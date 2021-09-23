@@ -28,22 +28,26 @@ function App() {
 //   )
 
   return (
-    <BrowserRouter>
-      <Header />
+
+  <>
+    {/* // <BrowserRouter> */}
+      {/* <Header /> */}
     {/* //   id ? dashboard : <Login onIdSubmit={setId}/> */}
-      <HeroMain />
-      <LowerContent/>
+      {/* <HeroMain />
+      <LowerContent/> */}
       
 
-      <Switch>
-      <Route exact path="/" component={Home}></Route>
+      {/* // <Switch> */}
+      {/* // <Route exact path="/" component={Home}></Route> */}
     
        {/* <Route exact path="/login" component={Login} onIdSubmit={setId}></Route> */}
-    
-       </Switch>
+{/*     
+      //  </Switch> */}
        
-       <Footer />
-     </BrowserRouter>
+       {/* <Footer /> */}
+    {/* //  </BrowserRouter> */}
+
+    </>
   );
 }
 
