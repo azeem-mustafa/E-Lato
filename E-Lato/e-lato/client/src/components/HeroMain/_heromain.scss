@@ -71,6 +71,7 @@ button {
 }
 .content-tabs {
     flex-grow: 1;
+    height: 50vh;
 }
 
 .content {
@@ -108,6 +109,10 @@ button {
         display: flex;
         justify-content: space-between;
     }
+}
+
+.content-2{
+    height: 30vh;
 }
 
 .active-content {

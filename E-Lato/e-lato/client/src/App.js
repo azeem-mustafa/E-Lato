@@ -11,6 +11,7 @@ import { ConversationsProvider } from './components/Contexts/ConversationsProvid
 import { SocketProvider } from './components/Contexts/SocketProvider';
 import HeroMain from './components/HeroMain/HeroMain';
 import LowerContent from './components/LowerContent/LowerContent';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
        {/* <Route exact path="/login" component={Login} onIdSubmit={setId}></Route> */}
     
        </Switch>
-
+       
+       <Footer />
      </BrowserRouter>
   );
 }
