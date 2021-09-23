@@ -1,8 +1,42 @@
-.info__flex-box{
-    display: flex;
-    flex-wrap: wrap;
+.info{
+
+    a{
+        text-decoration: none;
+        color: black;
+        width: 48%;
+    }
+
+    &__flex-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__img{
+        width: 100%;
+
+        padding: 1rem 0;
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    &__desc{
+        text-align: center;
+    }
+
 }
 
-.info__container{
-    width: 50%;
-}

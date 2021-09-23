@@ -1,0 +1,23 @@
+@use '../partials/variables' as *;
+
+.footer{
+    border-top: $Cloud 0.063rem solid;
+}
+
+.footer__flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    
+}
+
+.footer__aside{
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+.footer__icons{
+    height: 30px;
+    width: 30px;
+}
