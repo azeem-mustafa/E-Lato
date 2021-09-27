@@ -1,17 +1,26 @@
 import './_header.scss';
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SideBarData } from '../SideBar/SideBar';
 
-function Header() {
+
+
+
+
+
+function Header({token}) {
     const [sidebar, setSidebar] = useState(false)
+
+    console.log(token)
+    
 
     const showSiderbar = () => setSidebar(!sidebar)
 
     return (
+
         <header className='header'>
             <div className='header__nav'>
 
@@ -19,13 +28,14 @@ function Header() {
                     <FaIcons.FaBars onClick={showSiderbar} />
                 </Link>
 
-                <div className='header__logo-box'>
+                <Link to='/' className='header__logo-box'>
                     <h2 className='header__logo'>E-Lato</h2>
-                </div>
-
-                <div className='header__right-box'>
-                    <h2>Login</h2>
-                </div>
+                </Link>
+                {token ? 
+                  <h2>Profile</h2> : <Link to='/login' className='header__right-box'>
+                 <h2>Login</h2>
+             </Link> }
+               
 
             </div>
 
@@ -53,6 +63,8 @@ function Header() {
         </header>
     );
 }
+
+
 
 
 export default Header;

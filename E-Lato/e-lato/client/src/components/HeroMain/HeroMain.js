@@ -18,7 +18,10 @@ export default function HeroMain() {
 
     return (
         <div className="hero">
+            <div className='hero__logo-container'>
             <h1 className='hero__header'>Learn Something New Everyday!</h1>
+            <h2>What should i put here</h2>
+            </div>
             <div className="hero__container">
                 <button
                     className={toggleState === 1 ? "hero__tabs active-tabs" : "hero__tabs"}
@@ -101,10 +104,14 @@ export default function HeroMain() {
                         Teach to the best of YOUR abilities, on YOUR schedule, at YOUR price!
                     </p>
 
-                    <button className='content__button'>Sign Up</button>
+ 
+                    
+                    <Link to='signup' className='content__button'>Sign Up</Link>
                 </div>
             </div>
         </div>
+
+
     );
 }
 

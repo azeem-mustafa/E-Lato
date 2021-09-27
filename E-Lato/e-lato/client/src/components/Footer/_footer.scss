@@ -1,7 +1,18 @@
 @use '../partials/variables' as *;
+@use '../partials/mixins.scss' as *;
 
 .footer{
     border-top: $Cloud 0.063rem solid;
+
+    &__logo-box{
+        text-decoration: none;
+        h1{
+      
+        color: black;
+        @include bounce-animation;
+        }
+
+    }
 }
 
 .footer__flex{

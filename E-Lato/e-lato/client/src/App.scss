@@ -1,0 +1,5 @@
+@use './components/partials/typography.scss' as *;
+
+*, *::before, *::after{
+    font-family: 'Champagne & Limousines';
+}
