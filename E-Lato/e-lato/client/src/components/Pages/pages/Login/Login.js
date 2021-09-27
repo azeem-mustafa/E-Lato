@@ -4,11 +4,16 @@ import { Link, Redirect } from "react-router-dom";
 import Input from "../../../Input/Input";
 import axios from "axios";
 
+ 
+
+
 class Login extends Component {
     state = {
         error: '',
         success: false
     }
+
+    
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +27,11 @@ class Login extends Component {
                 console.log('Login Success: ', response.data);
                 
                 sessionStorage.setItem('jwtToken', response.data.token);
+               
                 this.setState({ success: true })
+                this.props.checkToken()
+                this.props.history.push('/')
+                
             })
             .catch(error => {
                 this.setState({
@@ -32,7 +41,11 @@ class Login extends Component {
             });
     }
 
+   
     render() {
+
+        console.log("history", this.props)
+
         return (
             <main className="login-page">
                 <form className="login" onSubmit={this.handleSubmit}>
