@@ -21,7 +21,6 @@ body {
     width: 95%;
     margin: 1rem auto 0;
     word-break: break-all;
-    height: 120vh;
     
     &__header{
         background-color: white;
@@ -78,7 +77,6 @@ button {
 }
 .content-tabs {
     flex-grow: 1;
-    height: 50vh;
 }
 
 .content {
