@@ -13,13 +13,20 @@ import { SideBarData } from '../SideBar/SideBar';
 
 function Header({token}) {
     const [sidebar, setSidebar] = useState(false)
+    const [page, setPage] = useState(1)
 
-    console.log(token)
+    console.log('token', token)
     
 
     const showSiderbar = () => setSidebar(!sidebar)
 
+  
+
+    
+
+
     return (
+        
 
         <header className='header'>
             <div className='header__nav'>
@@ -32,7 +39,10 @@ function Header({token}) {
                     <h2 className='header__logo'>E-Lato</h2>
                 </Link>
                 {token ? 
-                  <h2>Profile</h2> : <Link to='/login' className='header__right-box'>
+                    <Link to='/profile' className='header__right-box'>
+                  <h2>Profile</h2>
+                  </Link> : 
+                  <Link to='/login' className='header__right-box'>
                  <h2>Login</h2>
              </Link> }
                

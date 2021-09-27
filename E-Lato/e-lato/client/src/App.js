@@ -1,46 +1,8 @@
-// import './App.css';
-// import React from 'react';
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-// import Home from './components/Home/Home';
-// import Login from './components/Login/Login';
-// import useLocalStorage from './components/hooks/useLocalStorage';
-// import Dashboard from './components/Dashboard/Dashboard';
-// import { RequestsProvider } from './components/Contexts/RequestProvider';
-// import { ConversationsProvider } from './components/Contexts/ConversationsProvider';
-// import { SocketProvider } from './components/Contexts/SocketProvider';
 import HeroMain from './components/HeroMain/HeroMain';
 import LowerContent from './components/LowerContent/LowerContent';
 import Footer from './components/Footer/Footer';
 import ArtPage from './components/Pages/ArtPage';
-
-
-// function App() {
-//     const [id, setId] = useLocalStorage('id')
-
-//     const dashboard = (
-//       <SocketProvider id={id}>
-//       <RequestsProvider>
-//         <ConversationsProvider id={id}>
-//         <Dashboard id={id}/>
-//         </ConversationsProvider>
-//       </RequestsProvider>
-//       </SocketProvider>
-//     )
-
-//   return (
-
-//       id ? dashboard : <Login onIdSubmit={setId}/> 
- 
-
-
-//   );
-// }
-
-// export default App;
-
-
-
 import './App.scss';
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -58,15 +20,12 @@ class App extends Component {
 
   checkToken = () => {
     if (sessionStorage.getItem('jwtToken')){
-        this.setState( {jwtToken : true})
-    } else{
-      this.setState( {jwtToken : false})
+        this.setState( {jwtToken : !this.state.jwtToken})
     }
 }
 
 componentDidMount(){
   this.checkToken()
-
 }
 
     render() {
@@ -82,15 +41,15 @@ componentDidMount(){
                     <Route path='/art' exact>
                     <ArtPage />
                     </Route>
-                        <Route path="/profile" exact>
-                            <Profile />
-                        </Route>
+                        
+                            
+                            <Route exact path="/profile" render={(props) => (<Profile checkToken={this.checkToken} {...props}  />)}/>
+                    
                         <Route exact path='/messages'>
                           <MessagingMain/>
                           </Route>
-                        <Route exact path="/login">
-                            <Login token= {this.checkToken}/>
-                        </Route>
+                          <Route exact path="/login" render={(props) => (<Login checkToken={this.checkToken} {...props}  />)}/>
+                        
                         <Route exact path="/signup">
                             <Signup />
                         </Route>
