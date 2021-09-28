@@ -81,12 +81,12 @@ export default function HeroMain() {
                     <Link to='classes'
                         className='path-box__box'>
                         <h2>FIND A CLASS</h2>
-                        <img className='path-box__image' src={StudentImg} alt='student image' />
+                        <img className='path-box__image' src={StudentImg} alt='student' />
                     </Link>
                     <Link to='/login'
                         className='path-box__box'>
                         <h2>BECOME A TEACHER</h2>
-                        <img className='path-box__image' src={TeacherImg} alt='teacher image' />
+                        <img className='path-box__image' src={TeacherImg} alt='teacher' />
                     </Link>
                 </div>
             </section>

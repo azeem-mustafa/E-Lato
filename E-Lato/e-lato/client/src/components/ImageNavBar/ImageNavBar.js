@@ -12,47 +12,42 @@ export default function ImageNavBar() {
     return (
         <>
             <nav className='image-nav'>
-                <Link to='/art'>
+                <Link className='hero__box' to='/art'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={Art} alt='Art' />
                         <h3>Art</h3>
                     </div>
                 </Link>
 
-                <Link to='/music'>
+                <Link className='hero__box' to='/music'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={Music} alt='Music' />
                         <h3>Music</h3>
                     </div>
                 </Link>
 
-                <Link to='english'>
+                <Link className='hero__box' to='english'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={English} alt='English' />
                         <h3>English</h3>
                     </div>
                 </Link>
 
-
-
-
-
-
-                <Link to='math'>
+                <Link className='hero__box' to='math'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={Maths} alt='Math' />
                         <h3>Math</h3>
                     </div>
                 </Link>
 
-                <Link to='science'>
+                <Link className='hero__box' to='science'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={Science} alt='Science' />
                         <h3>Science</h3>
                     </div>
                 </Link>
 
-                <Link to='misc'>
+                <Link className='hero__box' to='misc'>
                     <div className='hero__image-container'>
                         <img className='hero__logo' src={Misc} alt='Misc' />
                         <h3>Misc</h3>
@@ -61,6 +56,5 @@ export default function ImageNavBar() {
 
             </nav>
         </>
-
     )
 }

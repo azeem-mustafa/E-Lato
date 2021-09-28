@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react'
-import useLocalStorage from '../hooks/UseLocalStorage';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { useContacts } from './ContactsProvider';
 import { useSocket } from './SocketProvider';
 
@@ -79,7 +79,7 @@ export function ConversationsProvider({ id, children }) {
       const fromMe = id === message.sender
       return { ...message, senderName: name, fromMe }
     })
-    
+
     const selected = index === selectedConversationIndex
     return { ...conversation, messages, recipients, selected }
   })

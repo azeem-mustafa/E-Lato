@@ -24,7 +24,6 @@ class App extends Component {
         jwtToken: false
     }
 
-
     checkToken = () => {
         if (sessionStorage.getItem('jwtToken')) {
             this.setState({ jwtToken: !this.state.jwtToken })
@@ -48,57 +47,57 @@ class App extends Component {
                         </Route>
 
                         <Route path='/art' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <ArtPage />
                         </Route>
 
                         <Route path='/music' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <MusicPage />
                         </Route>
 
                         <Route path='/english' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <EnglishPage />
                         </Route>
 
                         <Route path='/misc' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <MiscPage />
                         </Route>
 
                         <Route path='/math' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <MathPage />
                         </Route>
 
                         <Route path='/science' exact>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <SciencePage />
                         </Route>
 
                         <Route exact path='/profile'>
-                        <HeaderTwo token={this.state.jwtToken} />
-                        <Route exact path="/profile" render={(props) => (<Profile checkToken={this.checkToken} {...props} />)}/>
+                            <HeaderTwo token={this.state.jwtToken} />
+                            <Route exact path="/profile" render={(props) => (<Profile checkToken={this.checkToken} {...props} />)} />
                         </Route>
 
                         <Route exact path='/profile/edit'>
-                        <HeaderTwo token={this.state.jwtToken} />
-                        <Route exact path="/profile/edit" render={(props) => (<ProfileEdit checkToken={this.checkToken} {...props} />)} />
+                            <HeaderTwo token={this.state.jwtToken} />
+                            <Route exact path="/profile/edit" render={(props) => (<ProfileEdit checkToken={this.checkToken} {...props} />)} />
                         </Route>
 
                         <Route exact path='/messages'>
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <MessagingMain />
                         </Route>
 
                         <Route exact path='/login'>
-                        <HeaderTwo token={this.state.jwtToken} />
-                        <Route exact path="/login" render={(props) => (<Login checkToken={this.checkToken} {...props} />)} />
+                            <HeaderTwo token={this.state.jwtToken} />
+                            <Route exact path="/login" render={(props) => (<Login checkToken={this.checkToken} {...props} />)} />
                         </Route>
 
                         <Route exact path="/signup">
-                        <HeaderTwo token={this.state.jwtToken} />
+                            <HeaderTwo token={this.state.jwtToken} />
                             <Signup />
                         </Route>
                     </Switch>

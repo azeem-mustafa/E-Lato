@@ -101,7 +101,7 @@ class ProfileEdit extends Component {
             );
         }
 
-        const { first_name, last_name, email, phone, address, type, hobbies } = this.state.user;
+        // const { first_name, last_name, email, phone, address, type, hobbies } = this.state.user;
 
         return (
             <main className="edit-dashboard">
