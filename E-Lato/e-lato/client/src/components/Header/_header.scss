@@ -1,69 +1,114 @@
-.header{
-    &__nav{
-       background-color: #060b26;
-       display: flex;
-       height: 80px; 
-       justify-content: start;
-       align-items: center;
+@use "../partials/variables" as *;
+@use "../partials/mixins.scss" as *;
 
-       &-menu{
-           margin-left: 2rem;
-           font-size: 2rem;
-           background: none;
-       }
+.header {
+    &__nav {
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        @include padding-sides;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+
+        &-menu {
+            font-size: 2rem;
+            background: none;
+            height: 4rem;
+            width: 4rem;
+            color: #64c0d1;
+        }
     }
 
-    &__sidebar{
-        background-color: #060b26;
-        width: 250px;
-        height: 100vh;
+    &__nav-leftside {
+        display: flex;
+    }
+
+    &__logo-box {
+        width: 10rem;
+    }
+
+    &__sidebar {
+        background-color: $aqua;
+        width: 400px;
+        height: 90vh;
         display: flex;
         justify-content: center;
         position: fixed;
         top: 0;
         left: -100%;
         transition: 850ms;
+        z-index: 2;
+        border-radius: 1rem;
 
-        &.active{
-           left: 0;
-           transition: 350ms; 
+        &.active {
+            left: 0;
+            top: 5rem;
+            transition: 350ms;
+            z-index: 3;
         }
     }
 
-    &__sidebar-tems{
+    &__sidebar-items {
         width: 100%;
     }
 
-    &__sidebar-toggle{
-        background-color: #060b26;
+    &__sidebar-toggle {
+        background-color: $aqua;
         width: 100%;
         height: 80px;
         display: flex;
         justify-content: start;
         align-items: center;
+        border-radius: 1rem;
+    }
+
+    &__sidebar-menu-item {
+        margin-top: 3rem;
+        padding-left: 1rem;
+
+        svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    &__right-box {
+        text-decoration: none;
+        color: black;
+        background-image: url(../../assets/images/icons/logos/loginicon-05.png);
+        background-size: 20%;
+        background-repeat: no-repeat;
+        background-position: 1rem 0;
+        width: 13rem;
+        background-color: #e9ebeb;
+        text-align: center;
+        border-radius: 5rem;
+
+        @include bounce-animation;
     }
 }
 
-span{
+span {
     margin-left: 1rem;
 }
-.nav-text{
+.nav-text {
     list-style-type: none;
-    
 }
 
 .nav-text a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    width: 95%;
+    font-size: 2rem;
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    padding: 3rem 1rem;
     border-radius: 4px;
 
-    &:hover{
+    &:hover {
         background-color: #1ab3ff;
         width: 100%;
     }

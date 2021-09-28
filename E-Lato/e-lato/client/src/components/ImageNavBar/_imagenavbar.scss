@@ -1,0 +1,18 @@
+@use "../partials/mixins.scss" as *;
+
+.image-nav {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hero__box {
+    text-decoration: none;
+    color: black;
+
+    @include bounce-animation;
+}
+
+.hero__logo {
+    height: 5vh;
+}
