@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from '../Login/Login';
-import useLocalStorage from '../hooks/UseLocalStorage';
+import useLocalStorage from '../hooks/useLocalStorage';
 import Dashboard from '../Dashboard/Dashboard';
 import { ContactsProvider } from '../Contexts/ContactsProvider';
 import { ConversationsProvider } from '../Contexts/ConversationsProvider';

@@ -7,23 +7,18 @@ import Caligraphy from '../../../assets/images/pageimages/Calligraphy-writing.jp
 import DigitalArt from '../../../assets/images/pageimages/digitalart.jpg'
 import ArtImage from '../../../assets/images/icons/logos/Art-01.svg'
 
-
-
 export default function ArtPage() {
     return (
         <main>
             <div className='main'>
-                <img className='main__image' src={ArtImage} alt='art icon'/>
+                <img className='main__image' src={ArtImage} alt='art icon' />
                 <div className='main__text-flex'>
                     <h1>ART</h1>
-                    <h3>hello hello</h3>
-                    </div>
+                    <h3>As I work at my drawings, day after day, what seemed unattainable before is now gradually becoming possible. Slowly, I'm learning to observe and measure. I don't stand quite so helpless before nature any longer. </h3>
+                    <p>―  Vincent van Gogh</p>
+                </div>
             </div>
             <ImageNavBar />
-
-            <div className='main__page-title'>
-                <h1>Art is the expression of the soul</h1>
-            </div>
 
             <div className='main__page-news'>
 
@@ -38,14 +33,14 @@ export default function ArtPage() {
 
                     </div>
                     <div className='main__trending-block'>
-                        
+
                         <h3>Caligraphy</h3>
                         <img className='main__trending-image' src={Caligraphy} alt='Caligraphy' />
 
                     </div>
-                    
+
                     <div className='main__trending-block'>
-                        
+
                         <h3>Digital Art</h3>
                         <img className='main__trending-image' src={DigitalArt} alt='Digital Art' />
 
@@ -54,7 +49,7 @@ export default function ArtPage() {
             </div>
 
             <Link className='main__link' to='/techers'>
-            <button className='main__page-button'>Find a teacher</button>
+                <button className='main__page-button'>Find a teacher</button>
             </Link>
 
         </main>
