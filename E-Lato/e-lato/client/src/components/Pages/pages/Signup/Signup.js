@@ -13,6 +13,7 @@ class Signup extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
+
         // Sign up the user with these fields:
         // { first_name, last_name, phone, address, email, password }
         axios
@@ -23,8 +24,11 @@ class Signup extends Component {
                 last_name: e.target.last_name.value,
                 phone: e.target.phone.value,
                 address: e.target.address.value,
+                type: e.target.type.value
+
             })
-            .then(( response ) => {
+
+            .then((response) => {
                 this.setState({
                     success: true,
                     error: ''
@@ -40,6 +44,8 @@ class Signup extends Component {
     }
 
     render() {
+
+
         return (
             <main className="signup-page">
                 <form className="signup" onSubmit={this.handleSubmit}>
@@ -51,6 +57,8 @@ class Signup extends Component {
                     <Input type="text" name="address" label="Address" />
                     <Input type="text" name="email" label="Email" />
                     <Input type="password" name="password" label="Password" />
+                    <Input type='text' name='type' label='Are you a "Student" or "Teacher" ' />
+
 
                     <button className="signup__button">Sign up</button>
 

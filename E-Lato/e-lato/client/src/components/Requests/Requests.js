@@ -5,12 +5,12 @@ import { useRequests } from '../Contexts/RequestProvider';
 
 export default function Requests() {
 
-    const { requests }  = useRequests()
+    const { requests } = useRequests()
 
 
     return (
         <ListGroup variant="flush">
-            {requests.map( requests => (
+            {requests.map(requests => (
                 <ListGroup.Item key={AiFillContacts.id}>
                     {requests.name}
                 </ListGroup.Item>

@@ -1,117 +1,95 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './_heromain.scss'
+import StudentImg from '../../assets/images/icons/logos/reading-book.png';
+import TeacherImg from '../../assets/images/icons/logos/education.png'
 import Art from '../../assets/images/icons/logos/Art-01.svg'
 import English from '../../assets/images/icons/logos/English-01.svg'
 import Music from '../../assets/images/icons/logos/Music-01.svg'
 import Maths from '../../assets/images/icons/logos/Math-01.svg'
 import Science from '../../assets/images/icons/logos/Science-01.svg'
-import Misc from '../../assets/images/icons/logos/Misc-01.svg'
+import Misc from '../../assets/images/icons/logos/Misc-01.svg';
+import ELogo from '../../assets/images/icons/logos/elato logo_svg-02.svg';
 
 
 export default function HeroMain() {
-    const [toggleState, setToggleState] = useState(1);
-
-    const toggleTab = (index) => {
-        setToggleState(index);
-    };
 
     return (
         <div className="hero">
-            <div className='hero__logo-container'>
-            <h1 className='hero__header'>Learn Something New Everyday!</h1>
-            <h2>What should i put here</h2>
-            </div>
-            <div className="hero__container">
-                <button
-                    className={toggleState === 1 ? "hero__tabs active-tabs" : "hero__tabs"}
-                    onClick={() => toggleTab(1)}
-                >
-                    Find A Class
-                </button>
-                <button
-                    className={toggleState === 2 ? "hero__tabs active-tabs" : "hero__tabs"}
-                    onClick={() => toggleTab(2)}
-                >
-                    Become A Teacher
-                </button>
+            <div className='hero__bg-img'>
             </div>
 
-            <div className="content-tabs">
-                <div
-                    className={toggleState === 1 ? "content  active-content" : "content"}
-                >
-                    <h2>What Are You Trying To Learn?</h2>
 
-                    <div className='content__flex-images-1'>
+            <div className='hero__wrapper'>
+                <div className='hero__logo-container'>
+                    <img className='hero__banner-img' src={ELogo} alt='e Logo' />
+                </div>
+
+                <div className='hero__icons'>
+                    <div className='hero__icons-1'>
 
                         <Link to='/art'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={Art} alt='Art' />
-                            <h3>Art</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={Art} alt='Art' />
+                                <h3>Art</h3>
+                            </div>
                         </Link>
 
                         <Link to='/music'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={Music} alt='Music' />
-                            <h3>Music</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={Music} alt='Music' />
+                                <h3>Music</h3>
+                            </div>
                         </Link>
 
                         <Link to='english'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={English} alt='English' />
-                            <h3>English</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={English} alt='English' />
+                                <h3>English</h3>
+                            </div>
                         </Link>
 
                     </div>
 
-                    
-                    <div className='content__flex-images-2'>
+                    <div className='hero__icons-2'>
 
                         <Link to='math'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={Maths} alt='Math' />
-                            <h3>Math</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={Maths} alt='Math' />
+                                <h3>Math</h3>
+                            </div>
                         </Link>
 
                         <Link to='science'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={Science} alt='Science' />
-                            <h3>Science</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={Science} alt='Science' />
+                                <h3>Science</h3>
+                            </div>
                         </Link>
 
                         <Link to='misc'>
-                        <div className='hero__image-container'>
-                            <img className='hero__logo' src={Misc} alt='Misc' />
-                            <h3>Misc</h3>
-                        </div>
+                            <div className='hero__image-container'>
+                                <img className='hero__images' src={Misc} alt='Misc' />
+                                <h3>Misc</h3>
+                            </div>
                         </Link>
-
                     </div>
-
-
-                </div>
-
-                <div
-                    className={toggleState === 2 ? "content content-2  active-content" : "content"}
-                >  
-                    <p>
-                        Teach to the best of YOUR abilities, on YOUR schedule, at YOUR price!
-                    </p>
-
- 
-                    
-                    <Link to='signup' className='content__button'>Sign Up</Link>
                 </div>
             </div>
+            <section className='path-box'>
+                <div className='path-box__flex'>
+                    <Link to='classes'
+                        className='path-box__box'>
+                        <h2>FIND A CLASS</h2>
+                        <img className='path-box__image' src={StudentImg} alt='student image' />
+                    </Link>
+                    <Link to='/login'
+                        className='path-box__box'>
+                        <h2>BECOME A TEACHER</h2>
+                        <img className='path-box__image' src={TeacherImg} alt='teacher image' />
+                    </Link>
+                </div>
+            </section>
         </div>
-
-
     );
 }
-

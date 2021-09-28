@@ -1,34 +1,15 @@
-@use '../partials/variables' as *;
-@use '../partials/mixins.scss' as *;
+@use "../partials/variables" as *;
+@use "../partials/mixins.scss" as *;
 
-.footer{
-    border-top: $Cloud 0.063rem solid;
-
-    &__logo-box{
-        text-decoration: none;
-        h1{
-      
-        color: black;
-        @include bounce-animation;
-        }
-
-    }
-}
-
-.footer__flex{
+.footer {
+    @include padding-sides;
+    background-color: $aqua;
     display: flex;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    
+    align-items: center;
+    color: white;
+    height: 6rem;
 }
 
-.footer__aside{
-    display: flex;
-    width: 30%;
-    justify-content: space-evenly;
-}
-
-.footer__icons{
-    height: 30px;
-    width: 30px;
+.span {
+    content: "\00A9";
 }

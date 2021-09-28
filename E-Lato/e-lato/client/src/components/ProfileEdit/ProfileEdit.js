@@ -1,10 +1,10 @@
-import "./Profile.scss";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Input from "../../../Input/Input";
+import './_profile_edit.scss';
+import Input from '../Input/Input';
 
-class Profile extends Component {
+class ProfileEdit extends Component {
     state = {
         user: null,
         failedAuth: true,
@@ -16,33 +16,33 @@ class Profile extends Component {
         e.preventDefault();
         const token = sessionStorage.getItem('jwtToken');
 
-        
+
 
         console.log(this.state.user)
         axios
-        .post('http://localhost:8080/api/users/current', {
-        
+            .post('http://localhost:8080/api/users/current', {
 
-        hobbies: e.target.hobbies.value
 
-    },{
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    } 
-    ).then(( response ) => {
-        this.setState({
-            success: true,
-            error: ''
-        });
-        e.target.reset();
-    })
-    .catch((error) => {
-        this.setState({
-            success: false,
-            error: error.response.data
-        });
-    })
+                hobbies: e.target.hobbies.value,
+
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+            ).then((response) => {
+                this.setState({
+                    success: true,
+                    error: ''
+                });
+                e.target.reset();
+            })
+            .catch((error) => {
+                this.setState({
+                    success: false,
+                    error: error.response.data
+                });
+            })
     }
 
 
@@ -80,15 +80,15 @@ class Profile extends Component {
         this.setState({
             user: null,
             failedAuth: true,
-        
+
         });
         this.props.checkToken()
-        this.props.history.push('/') 
+        this.props.history.push('/')
     }
 
     render() {
 
-        console.log("history", this.props)
+
         if (this.state.failedAuth) {
             return (
                 <main className="dashboard">
@@ -113,7 +113,7 @@ class Profile extends Component {
             <main className="dashboard">
                 <h1 className="dashboard__title">Profile: {first_name} {last_name} </h1>
                 <p>
-                    Welcome back, {first_name} {last_name}! 👋
+                    Edit your details here 👋
                 </p>
                 <h2>My Profile</h2>
                 <p>Email: {email}</p>
@@ -121,11 +121,24 @@ class Profile extends Component {
                 <p>Address: {address}</p>
                 <p>Type of Account: {type}</p>
                 <p>Type of Account: {hobbies}</p>
-                
 
-                <Link to='/profile/edit'>
-                    EDIT
-                    </Link>
+
+
+
+
+
+
+                <form className="signup" onSubmit={this.handleSubmit}>
+                    <Input type='text' name='hobbies' label='hobbies ' />
+                    <button className="signup__button">Edit </button>
+
+                    {this.state.success && <div className="signup__message">Signed up! You can now <Link to="/login">log in</Link></div>}
+                    {this.state.error && <div className="signup__message">{this.state.error}</div>}
+                </form>
+
+
+
+
 
 
                 <button className="dashboard__logout" onClick={this.handleLogout}>
@@ -136,6 +149,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
-
-
+export default ProfileEdit;

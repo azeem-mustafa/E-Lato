@@ -12,6 +12,7 @@ import './App.scss';
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Profile from "./components/Pages/pages/Profile/Profile";
+import ProfileEdit from './components/ProfileEdit/ProfileEdit';
 import Login from "./components/Pages/pages/Login/Login";
 import Signup from "./components/Pages/pages/Signup/Signup";
 import MessagingMain from "./components/MessagingMain/MessagingMain";
@@ -66,6 +67,7 @@ class App extends Component {
                             <SciencePage />
                         </Route>
                         <Route exact path="/profile" render={(props) => (<Profile checkToken={this.checkToken} {...props} />)} />
+                        <Route exact path="/profile/edit" render={(props) => (<ProfileEdit checkToken={this.checkToken} {...props} />)} />
 
                         <Route exact path='/messages'>
                             <MessagingMain />
