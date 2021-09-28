@@ -1,14 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import ImageNavBar from '../ImageNavBar/ImageNavBar';
-import './_artpage.scss';
-import Painting from '../../assets/images/pageimages/painting.jpg'
-import Caligraphy from '../../assets/images/pageimages/Calligraphy-writing.jpg'
-import DigitalArt from '../../assets/images/pageimages/digitalart.jpg'
+import ImageNavBar from '../../ImageNavBar/ImageNavBar';
 
 
-
-export default function ArtPage() {
+export default function MathPage() {
     return (
         <main>
             <div className='main__image'>
@@ -28,20 +23,20 @@ export default function ArtPage() {
                     <div className='main__trending-block'>
 
                         <h3>Painting</h3>
-                        <img className='main__trending-image' src={Painting} alt='Painting Image' />
+                        <img className='main__trending-image' src={''} alt='Painting Image' />
 
                     </div>
                     <div className='main__trending-block'>
                         
                         <h3>Caligraphy</h3>
-                        <img className='main__trending-image' src={Caligraphy} alt='Caligraphy' />
+                        <img className='main__trending-image' src={''} alt='Caligraphy' />
 
                     </div>
                     
                     <div className='main__trending-block'>
                         
                         <h3>Digital Art</h3>
-                        <img className='main__trending-image' src={DigitalArt} alt='Digital Art' />
+                        <img className='main__trending-image' src={''} alt='Digital Art' />
 
                     </div>
                 </div>

@@ -5,10 +5,10 @@ const bcrypt = require("bcryptjs");
 
 /* CREATE new user */
 router.post("/register", (req, res) => {
-    const { first_name, last_name, phone, address, email, password } = req.body;
+    const { first_name, last_name, phone, address, email, password, type } = req.body;
 
     // If any fields are missing, return
-    if (!first_name || !last_name || !phone || !address || !email || !password) {
+    if (!first_name || !last_name || !phone || !address || !email || !password || !type) {
         return res.status(400).send("Please enter the required fields.");
     }
 
@@ -76,5 +76,34 @@ router.get("/current", (req, res) => {
             });
     });
 });
+
+
+router.post("/current", (req, res) => {
+    // If there is no auth header provided
+    if (!req.headers.authorization) return res.status(401).send("Please login");
+
+    // Parse the Bearer token 
+    const authToken = req.headers.authorization.split(" ")[1];
+
+    // Verify the token
+    jwt.verify(authToken, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) return res.status(401).send("Invalid auth token");
+        console.log(decoded)
+
+        // Find the user
+        User.where({ email: decoded.email })
+            .fetch()
+            .then((user) => {
+                const { hobbies } = req.body;
+
+
+                return user.set('hobbies', hobbies).save()
+                
+              
+              
+            });
+    });
+});
+
 
 module.exports = router;

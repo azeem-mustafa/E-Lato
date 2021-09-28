@@ -1,35 +1,67 @@
 import React from 'react'
 import './_lowercontent.scss'
-import MusicNews from '../../assets/images/news/musicNews.jpg'
-import Egg from '../../assets/images/news/egg.jpg'
-import Mars from '../../assets/images/news/mars.jpg'
-import Swims from '../../assets/images/news/swims.jpg'
+import { Link } from 'react-router-dom'
+import ELogo from '../../assets/images/icons/logos/elato logo_svg-02.svg'
 
 export default function LowerContent() {
     return (
-        <div className='info'>
-            <div className='info__flex-box'>
-                <a href='https://www.huffpost.com/entry/is-there-proof-that-stude_b_14105092'><div className='info__container'>
-                    <img className='info__img' src={MusicNews} />
-                    <h3 className='info__title'>Is There Proof That Students Can learn From Video Games?</h3>
-                    <p className='info__desc'>What is the real implications on children when it comes to video games</p>
-                </div></a>
-                <a href='https://www.sciencedaily.com/releases/2021/08/210827133748.htm'><div className='info__container'>
-                    <img className='info__img' src={Egg} />
-                    <h3 className='info__title'>A universal equation for the shape of an egg</h3>
-                    <p className='info__desc'>Researchers have discovered a universal mathematical formula that can describe any bird's egg existing in nature</p>
-                </div></a>
-                <a href='https://www.sciencedaily.com/releases/2021/08/210826111716.htm'><div className='info__container'>
-                    <img className='info__img' src={Mars} />
-                    <h3 className='info__title'>Will it be safe for humans to fly to Mars?</h3>
-                    <p className='info__desc'>A human space mission would be viable if it doesn't exceed four years, an international research team concludes in new research.</p>
-                </div></a>
-                <a href='https://www.grammarly.com/blog/10-interesting-english-facts-guest'><div className='info__container'>
-                    <img className='info__img' src={Swims} />
-                    <h3 className='info__title'>10 Interesting Facts About the English Language that You Didn’t Know</h3>
-                    <p className='info__desc'>Did you know that "Swims" is written the same even if upside down</p>
-                </div></a>
+        <section className='lower-content'>
+            <div className='lower-content__bg-img'>
             </div>
-        </div> 
+            <div className='lower-content__column-one'>
+                <img className='lower-content__logo' src={ELogo} alt='E logo' />
+
+                <div className='lower-content__block lower-content__block-forum'>
+                    <h2>EDUCATIONAL DISCUSSION FORUMS</h2>
+                    <h2>SPEAK TO OUR SUPPORT TEAM</h2>
+                </div>
+
+                <div className='lower-content__block lower-content__block-phone'>
+                    <h2 className='lower-content__title'>CONTACT US BY PHONE</h2>
+                    <h3>1-800-338-2283</h3>
+                    <h3>1-800-EDU-CATE</h3>
+                </div>
+
+                <div className='lower-content__block lower-content__block-cta'>
+                    <h2 className='lower-content__title'>GET STARTED TODAY</h2>
+                    <Link className='lower-content__button' to='/signup'>LEARN SOMETHING NEW
+                    </Link>
+                </div>
+
+
+            </div>
+
+            <div className='lower-content__column-two'>
+                <div className='lower-content__block lower-content__block-works'>
+                    <h2 className='lower-content__title'>HOW IT WORKS</h2>
+                    <h3>Overview</h3>
+                    <h3>Reviews</h3>
+                    <h3>Pricing</h3>
+                    <h3>ABOUT OUR STORY</h3>
+                </div>
+
+                <div className='lower-content__block lower-content__block-curricula'>
+                    <h2 className='lower-content__title'>CURRICULA FOR:</h2>
+                    <h3>Elementary</h3>
+                    <h3>Middle School</h3>
+                    <h3>High School</h3>
+                    <h3>Adaptive Learning Methods</h3>
+                </div>
+            </div>
+            <div className='lower-content__column-three'>
+                <div className='lower-content__block lower-content__block-support'>
+                    <h2 className='lower-content__title'>SUPPORT</h2>
+                    <h3>FAQ</h3>
+                    <h3>User Guide</h3>
+                    <h3>Download App</h3>
+                </div>
+
+                <div className='lower-content__block lower-content__block-policies'>
+                    <h2 className='lower-content__title'>POLICIES</h2>
+                    <h3>Privacy Policy</h3>
+                    <h3>Terms and Conditions</h3>
+                </div>
+            </div>
+        </section>
     )
 }
