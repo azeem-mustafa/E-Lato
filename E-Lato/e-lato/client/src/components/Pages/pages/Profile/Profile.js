@@ -2,7 +2,7 @@ import "./Profile.scss";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Input from "../../../Input/Input";
+import ProfileAvatar from '../../../../assets/images/icons/logos/istockphoto-486983232-612x612.jpg';
 
 class Profile extends Component {
     state = {
@@ -16,33 +16,30 @@ class Profile extends Component {
         e.preventDefault();
         const token = sessionStorage.getItem('jwtToken');
 
-        
-
-        console.log(this.state.user)
         axios
-        .post('http://localhost:8080/api/users/current', {
-        
+            .post('http://localhost:8080/api/users/current', {
 
-        hobbies: e.target.hobbies.value
 
-    },{
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    } 
-    ).then(( response ) => {
-        this.setState({
-            success: true,
-            error: ''
-        });
-        e.target.reset();
-    })
-    .catch((error) => {
-        this.setState({
-            success: false,
-            error: error.response.data
-        });
-    })
+                hobbies: e.target.hobbies.value
+
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+            ).then((response) => {
+                this.setState({
+                    success: true,
+                    error: ''
+                });
+                e.target.reset();
+            })
+            .catch((error) => {
+                this.setState({
+                    success: false,
+                    error: error.response.data
+                });
+            })
     }
 
 
@@ -80,15 +77,14 @@ class Profile extends Component {
         this.setState({
             user: null,
             failedAuth: true,
-        
+
         });
         this.props.checkToken()
-        this.props.history.push('/') 
+        this.props.history.push('/')
     }
 
     render() {
 
-        console.log("history", this.props)
         if (this.state.failedAuth) {
             return (
                 <main className="dashboard">
@@ -111,31 +107,40 @@ class Profile extends Component {
 
         return (
             <main className="dashboard">
-                <h1 className="dashboard__title">Profile: {first_name} {last_name} </h1>
-                <p>
-                    Welcome back, {first_name} {last_name}! 👋
-                </p>
-                <h2>My Profile</h2>
-                <p>Email: {email}</p>
-                <p>Phone: {phone}</p>
-                <p>Address: {address}</p>
-                <p>Type of Account: {type}</p>
-                <p>Type of Account: {hobbies}</p>
-                
+                <div className='dashboard__bg-img'>
+                </div>
+                <h1 className="dashboard__title"> Hey, {first_name}! 👋</h1>
+                <h2 className='dashboard__sub-title' >
+                    Welcome back! Lets learn something new!
+                </h2>
 
-                <Link to='/profile/edit'>
-                    EDIT
+                <div className='dashboard__info-box'>
+                    <img className='dashboard__profile-image' src={ProfileAvatar} alt='placeholder' />
+                    <h2>{first_name} {last_name} </h2>
+                    <p>Email: {email}</p>
+                    <p>Phone: {phone}</p>
+                    <p>Address: {address}</p>
+                    <p>Interests: {hobbies}</p>
+                </div>
+
+                <div className='dashboard__edit-box'>
+                    <Link to='/messages'>
+                        Messages
                     </Link>
+                    <Link to='/profile/edit'>
+                        Edit Account Details
+                    </Link>
+                    <p>Help</p>
+                    <p>Customize</p>
 
+                    <button className="dashboard__logout" onClick={this.handleLogout}>
+                        Log out
+                    </button>
 
-                <button className="dashboard__logout" onClick={this.handleLogout}>
-                    Log out
-                </button>
+                </div>
             </main>
         );
     }
 }
 
 export default Profile;
-
-

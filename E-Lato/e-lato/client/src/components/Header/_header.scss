@@ -20,6 +20,14 @@
         }
     }
 
+    &__nav-leftside {
+        display: flex;
+    }
+
+    &__logo-box {
+        width: 10rem;
+    }
+
     &__sidebar {
         background-color: $aqua;
         width: 400px;
@@ -70,7 +78,7 @@
     &__right-box {
         text-decoration: none;
         color: black;
-        background-image: url(../../assets/images/icons/logos/loginIcon-05.png);
+        background-image: url(../../assets/images/icons/logos/loginicon-05.png);
         background-size: 20%;
         background-repeat: no-repeat;
         background-position: 1rem 0;

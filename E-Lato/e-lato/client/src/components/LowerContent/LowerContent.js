@@ -1,7 +1,7 @@
 import React from 'react'
 import './_lowercontent.scss'
 import { Link } from 'react-router-dom'
-import ELogo from '../../assets/images/icons/logos/elato logo_svg-02.svg'
+import ELogo from '../../assets/images/icons/logos/elatologo_svg-02.svg'
 
 export default function LowerContent() {
     return (

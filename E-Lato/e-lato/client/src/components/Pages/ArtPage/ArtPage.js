@@ -5,13 +5,19 @@ import '../_navpages.scss';
 import Painting from '../../../assets/images/pageimages/painting.jpg'
 import Caligraphy from '../../../assets/images/pageimages/Calligraphy-writing.jpg'
 import DigitalArt from '../../../assets/images/pageimages/digitalart.jpg'
+import ArtImage from '../../../assets/images/icons/logos/Art-01.svg'
 
 
 
 export default function ArtPage() {
     return (
         <main>
-            <div className='main__image'>
+            <div className='main'>
+                <img className='main__image' src={ArtImage} alt='art icon'/>
+                <div className='main__text-flex'>
+                    <h1>ART</h1>
+                    <h3>hello hello</h3>
+                    </div>
             </div>
             <ImageNavBar />
 

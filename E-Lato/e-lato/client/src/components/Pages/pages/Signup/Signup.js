@@ -13,7 +13,6 @@ class Signup extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-
         // Sign up the user with these fields:
         // { first_name, last_name, phone, address, email, password }
         axios
@@ -45,9 +44,10 @@ class Signup extends Component {
 
     render() {
 
-
         return (
             <main className="signup-page">
+                <div className="signup-page__bg-img">
+                </div>
                 <form className="signup" onSubmit={this.handleSubmit}>
                     <h1 className="signup__title">Sign up</h1>
 
@@ -65,7 +65,7 @@ class Signup extends Component {
                     {this.state.success && <div className="signup__message">Signed up! You can now <Link to="/login">log in</Link></div>}
                     {this.state.error && <div className="signup__message">{this.state.error}</div>}
                 </form>
-                <p>
+                <p className='signup__login'>
                     Have an account? <Link to="/login">Log in</Link>
                 </p>
             </main>
