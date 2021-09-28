@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import ELogo from '../../assets/images/icons/logos/elatologo_svg-02.svg'
-import {SideBarData} from '../NavSideBar/NavSideBar'
+import { SideBarData } from '../NavSideBar/NavSideBar'
 
 function HeaderTwo({ token }) {
     const [sidebar, setSidebar] = useState(false)
