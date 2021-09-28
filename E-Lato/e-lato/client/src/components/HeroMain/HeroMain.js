@@ -9,7 +9,7 @@ import Music from '../../assets/images/icons/logos/Music-01.svg'
 import Maths from '../../assets/images/icons/logos/Math-01.svg'
 import Science from '../../assets/images/icons/logos/Science-01.svg'
 import Misc from '../../assets/images/icons/logos/Misc-01.svg';
-import ELogo from '../../assets/images/icons/logos/elato logo_svg-02.svg';
+import ELogo from '../../assets/images/icons/logos/elatologo_svg-02.svg';
 
 
 export default function HeroMain() {

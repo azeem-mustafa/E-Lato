@@ -22,8 +22,8 @@ body {
 
     &__bg-img {
         background-image: url(../../assets/images/icons/logos/Math-01.svg);
-        height: 75rem;
-        width: 75rem;
+        height: 40rem;
+        width: 40rem;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -63,7 +63,7 @@ body {
 
     //icons
     &__images {
-        height: 20vh;
+        height: 15vh;
     }
 
     &__icons {
@@ -115,7 +115,7 @@ body {
 
 .path-box {
     display: flex;
-    height: 40vh;
+    height: 35vh;
     background-color: #eff1f1;
     padding-bottom: 2rem;
     justify-content: space-between;
@@ -137,7 +137,7 @@ body {
 
     &__box {
         @include background-gradient;
-        height: 35vh;
+        height: 30vh;
         width: 40vw;
         display: flex;
         flex-direction: column;

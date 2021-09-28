@@ -1,12 +1,13 @@
-import './_header.scss';
+import '../Header/_header.scss';
 import React from "react";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import ELogo from '../../assets/images/icons/logos/elatologo_svg-02.svg'
 import { SideBarData } from '../SideBar/SideBar';
 
-function Header({ token }) {
+function HeaderTwo({ token }) {
     const [sidebar, setSidebar] = useState(false)
     const showSiderbar = () => setSidebar(!sidebar)
 
@@ -14,10 +15,15 @@ function Header({ token }) {
 
         <header className='header'>
             <div className='header__nav'>
+                <div className='header__nav-leftside'>
+                    <Link to='#' className='header__nav-menu'>
+                        <FaIcons.FaBars onClick={showSiderbar} />
+                    </Link>
 
-                <Link to='#' className='header__nav-menu'>
-                    <FaIcons.FaBars onClick={showSiderbar} />
-                </Link>
+                    <Link to='/' className='header__logo-box'>
+                        <img src={ELogo} alt='E-Logo' />
+                    </Link>
+                </div>
                 {token ?
                     <Link to='/profile' className='header__right-box'>
                         <h2>Profile</h2>
@@ -52,4 +58,4 @@ function Header({ token }) {
     );
 }
 
-export default Header;
+export default HeaderTwo;

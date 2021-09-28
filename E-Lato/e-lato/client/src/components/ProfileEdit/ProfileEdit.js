@@ -16,12 +16,8 @@ class ProfileEdit extends Component {
         e.preventDefault();
         const token = sessionStorage.getItem('jwtToken');
 
-
-
-        console.log(this.state.user)
         axios
             .post('http://localhost:8080/api/users/current', {
-
 
                 hobbies: e.target.hobbies.value,
 
@@ -44,7 +40,6 @@ class ProfileEdit extends Component {
                 });
             })
     }
-
 
     componentDidMount() {
         const token = sessionStorage.getItem('jwtToken');
@@ -88,7 +83,6 @@ class ProfileEdit extends Component {
 
     render() {
 
-
         if (this.state.failedAuth) {
             return (
                 <main className="dashboard">
@@ -110,38 +104,22 @@ class ProfileEdit extends Component {
         const { first_name, last_name, email, phone, address, type, hobbies } = this.state.user;
 
         return (
-            <main className="dashboard">
-                <h1 className="dashboard__title">Profile: {first_name} {last_name} </h1>
-                <p>
-                    Edit your details here 👋
-                </p>
-                <h2>My Profile</h2>
-                <p>Email: {email}</p>
-                <p>Phone: {phone}</p>
-                <p>Address: {address}</p>
-                <p>Type of Account: {type}</p>
-                <p>Type of Account: {hobbies}</p>
+            <main className="edit-dashboard">
+                <div className='edit-dashboard__bg-img'>
+                </div>
+                <h1 className="edit-dashboard__title">Edit your details</h1>
 
+                <form className="edit-dashboard__form" onSubmit={this.handleSubmit}>
+                    <div className='edit-dashboard__form-input-flex'>
+                        <Input type='text' name='hobbies' label='hobbies ' />
+                        <button className="edit-dashboard__button">Edit </button>
 
-
-
-
-
-
-                <form className="signup" onSubmit={this.handleSubmit}>
-                    <Input type='text' name='hobbies' label='hobbies ' />
-                    <button className="signup__button">Edit </button>
-
-                    {this.state.success && <div className="signup__message">Signed up! You can now <Link to="/login">log in</Link></div>}
-                    {this.state.error && <div className="signup__message">{this.state.error}</div>}
+                        {this.state.success && <div className="signup__message">Signed up! You can now <Link to="/login">log in</Link></div>}
+                        {this.state.error && <div className="signup__message">{this.state.error}</div>}
+                    </div>
                 </form>
 
-
-
-
-
-
-                <button className="dashboard__logout" onClick={this.handleLogout}>
+                <button className="edit-dashboard__logout" onClick={this.handleLogout}>
                     Log out
                 </button>
             </main>

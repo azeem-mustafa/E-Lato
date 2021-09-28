@@ -4,16 +4,11 @@ import { Link, Redirect } from "react-router-dom";
 import Input from "../../../Input/Input";
 import axios from "axios";
 
- 
-
-
 class Login extends Component {
     state = {
         error: '',
         success: false
     }
-
-    
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -25,13 +20,13 @@ class Login extends Component {
             })
             .then(response => {
                 console.log('Login Success: ', response.data);
-                
+
                 sessionStorage.setItem('jwtToken', response.data.token);
-               
+
                 this.setState({ success: true })
                 this.props.checkToken()
                 this.props.history.push('/')
-                
+
             })
             .catch(error => {
                 this.setState({
@@ -41,13 +36,12 @@ class Login extends Component {
             });
     }
 
-   
     render() {
-
-        console.log("history", this.props)
 
         return (
             <main className="login-page">
+                <div className='login-page__bg-img'>
+                </div>
                 <form className="login" onSubmit={this.handleSubmit}>
                     <h1 className="login__title">Log in</h1>
 
@@ -59,10 +53,10 @@ class Login extends Component {
                     {this.state.error && <div className="login__message">{this.state.error}</div>}
                     {this.state.success && <Redirect to={{
                         pathname: "/",
-                        state: {jwtToken: true}
-                    }}/>}
+                        state: { jwtToken: true }
+                    }} />}
                 </form>
-                <p>
+                <p className='login__signup-link'>
                     Need an account? <Link to="/signup">Sign up</Link>
                 </p>
             </main>

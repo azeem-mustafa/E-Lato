@@ -20,6 +20,14 @@
         }
     }
 
+    &__nav-leftside {
+        display: flex;
+    }
+
+    &__logo-box {
+        width: 10rem;
+    }
+
     &__sidebar {
         background-color: $aqua;
         width: 400px;
