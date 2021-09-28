@@ -1,13 +1,19 @@
 @use '../partials/variables' as *;
+@use '../partials/mixins.scss' as *;
 
-.main__image{
-    background-image: url('../../assets/images/pageimages/artMain.jpg');
-    height: 40vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.main{
+    @include background-gradient;
+    height: 20vh;
+    @include padding-sides;
+    display: flex;
+
+    &__image{
+        height: 20vh;
+        padding-right: 1rem;
+    }
 
 }
+
 
 .main__page-title{
     padding: 1rem 1rem;

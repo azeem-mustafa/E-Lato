@@ -13,8 +13,8 @@ const REQUESTS_KEY = 'requests'
 export default function MessagingSidebar({ id }) {
 
     const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
-    const conversationsOpen = activeKey === CONVERSATIONS_KEY
     const [modalOpen, setModalOpen] = useState(false)
+    const conversationsOpen = activeKey === CONVERSATIONS_KEY
 
     function closedModal() {
         setModalOpen(false)

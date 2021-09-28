@@ -1,56 +1,50 @@
-import React, {useState} from 'react'
-import { Modal, Form, Button } from 'react-bootstrap';
-import Requests from '../../Requests/Requests';
-import { useRequests } from '../../Contexts/RequestProvider';
-import { useConversations } from '../../Contexts/ConversationsProvider';
+import React, { useState } from 'react'
+import { Modal, Form, Button } from 'react-bootstrap'
+import { useContacts } from '../../Contexts/ContactsProvider'
+import { useConversations } from '../../Contexts/ConversationsProvider'
 
 export default function NewConversationModal({ closeModal }) {
+  const [selectedContactIds, setSelectedContactIds] = useState([])
+  const { contacts } = useContacts()
+  const { createConversation } = useConversations()
 
-    const [selectedRequestIds, setSelectedRequestIds] = useState([])
-    const { requests } = useRequests()
-    const { createConversations } = useConversations()
+  function handleSubmit(e) {
+    e.preventDefault()
 
-    function handleSubmit (e) {
-        e.preventDefault()
+    createConversation(selectedContactIds)
+    closeModal()
+  }
 
-        createConversations(selectedRequestIds)
-
-        closeModal()
-    }
-
-    function handleCheckboxChange(requestsId) {
-        setSelectedRequestIds(prevSelectedRequestIds => {
-            if (prevSelectedRequestIds.includes(requestsId)) {
-                return prevSelectedRequestIds.filter(prevId => {
-                    return requestsId !== prevId
-                })
-            } else {
-                return [...prevSelectedRequestIds, requestsId]
-            }
+  function handleCheckboxChange(contactId) {
+    setSelectedContactIds(prevSelectedContactIds => {
+      if (prevSelectedContactIds.includes(contactId)) {
+        return prevSelectedContactIds.filter(prevId => {
+          return contactId !== prevId
         })
-    }
+      } else {
+        return [...prevSelectedContactIds, contactId]
+      }
+    })
+  }
 
-    return (
-        <>
-        <Modal.Header closeButton>Active Conversations</Modal.Header>
-        <Modal.Body>
+  return (
+    <>
+      <Modal.Header closeButton>Create Conversation</Modal.Header>
+      <Modal.Body>
         <Form onSubmit={handleSubmit}>
-            
-            {requests.map(requests => (
-                <Form.Group controlId={requests.id} key={requests.id}>
-                    <Form.Check
-                    type='checkbox'
-                    value={selectedRequestIds.includes(requests.id)}
-                    label={requests.name}
-                    onChange={() => handleCheckboxChange(requests.id)}
-                    />
-                </Form.Group>
-
-            ))}
-            <Button type='submit'>Send Request</Button>
-
+          {contacts.map(contact => (
+            <Form.Group controlId={contact.id} key={contact.id}>
+              <Form.Check
+                type="checkbox"
+                value={selectedContactIds.includes(contact.id)}
+                label={contact.name}
+                onChange={() => handleCheckboxChange(contact.id)}
+              />
+            </Form.Group>
+          ))}
+          <Button type="submit">Create</Button>
         </Form>
-        </Modal.Body>
-        </>
-    )
+      </Modal.Body>
+    </>
+  )
 }

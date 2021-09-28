@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { SideBarData } from '../SideBar/SideBar';
+import {SideBarData} from '../NavSideBar/NavSideBar'
 
 function Header({ token }) {
     const [sidebar, setSidebar] = useState(false)
