@@ -28,22 +28,22 @@ Select "Create A New Id"
 
 Select an Id and click the "New Contact" button in the "Contacts" tab.
 
-![Step 2](C:\Users\amus2\Downloads\Messaging2.PNG "Step 2")
+![Step 2](/images/Messaging2.PNG "Step 2")
 
 3)
 
 Add the select Id and add it to your window. Name this new Id.
 
-![Step 3](C:\Users\amus2\Downloads\Messaging3.PNG "Step 3")
+![Step 3](/images/Messaging3.PNG "Step 3")
 
 4)
 
 Select the "Conversations" tab and select the "New Conversation" button. Select the newly added Id.
 
-![Step 4](C:\Users\amus2\Downloads\Messaging4.PNG "Step 4")
+![Step 4](/images/Messaging4.PNG "Step 4")
 
 5)
 
 Select the new conversation and enjoy!
 
-![Step 5](C:\Users\amus2\Downloads\Messaging5.PNG "Step 5")
+![Step 5](/images/Messaging5.PNG "Step 5")
