@@ -37,7 +37,10 @@ export default function LowerContent() {
                     <h3>Overview</h3>
                     <h3>Reviews</h3>
                     <h3>Pricing</h3>
-                    <h3>ABOUT OUR STORY</h3>
+
+                    <Link to='/about-us'>
+                    <h3 className='about-us-link'>ABOUT OUR STORY</h3>
+                    </Link>
                 </div>
 
                 <div className='lower-content__block lower-content__block-curricula'>

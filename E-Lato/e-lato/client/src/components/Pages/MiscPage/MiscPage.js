@@ -13,9 +13,9 @@ export default function MiscPage() {
             <div className='main'>
                 <img className='main__image' src={MusicImg} alt='art icon' />
                 <div className='main__text-flex'>
-                    <h1>MUSIC</h1>
-                    <h3>Music is the language of the spirit. It opens the secret of life bringing peace, abolishing strife.</h3>
-                    <p>― Kahlil Gibran </p>
+                    <h1>Learn Something Different</h1>
+                    <h3>You don’t learn to walk by following rules. You learn by doing, and by falling over.</h3>
+                    <p>― Richard Branson </p>
                 </div>
             </div>
             <ImageNavBar />
