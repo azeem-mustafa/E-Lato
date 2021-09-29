@@ -3,3 +3,7 @@
 *, *::before, *::after{
     font-family: 'Champagne & Limousines';
 }
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}

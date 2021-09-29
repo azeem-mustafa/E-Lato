@@ -17,6 +17,7 @@ import Login from "./components/Pages/pages/Login/Login";
 import Signup from "./components/Pages/pages/Signup/Signup";
 import MessagingMain from "./components/MessagingMain/MessagingMain";
 import HeaderTwo from './components/HeaderTwo/HeaderTwo';
+import AboutUs from './components/Pages/AboutUs/AboutUs';
 
 class App extends Component {
 
@@ -99,6 +100,11 @@ class App extends Component {
                         <Route exact path="/signup">
                             <HeaderTwo token={this.state.jwtToken} />
                             <Signup />
+                        </Route>
+
+                        <Route path='/about-us' exact>
+                            <HeaderTwo token={this.state.jwtToken} />
+                            <AboutUs />
                         </Route>
                     </Switch>
                     <Footer />
