@@ -95,15 +95,9 @@ router.post("/current", (req, res) => {
             .fetch()
             .then((user) => {
                 const { hobbies } = req.body;
-
-
                 return user.set('hobbies', hobbies).save()
-                
-              
-              
             });
     });
 });
-
 
 module.exports = router;

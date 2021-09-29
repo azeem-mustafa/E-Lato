@@ -48,7 +48,7 @@ export default function ArtPage() {
                 </div>
             </div>
 
-            <Link className='main__link' to='/techers'>
+            <Link className='main__link' to='/classes'>
                 <button className='main__page-button'>Find a teacher</button>
             </Link>
 

@@ -12,13 +12,13 @@ export default function Sidebar({ id }) {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
   const [modalOpen, setModalOpen] = useState(false)
   const conversationsOpen = activeKey === CONVERSATIONS_KEY
-  
+
   function closeModal() {
     setModalOpen(false)
   }
 
   return (
-    <div style={{ width: '250px' }} className="d-flex flex-column">
+    <div style={{ width: '250px'}} className="d-flex flex-column" >
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav variant="tabs" className="justify-content-center">
           <Nav.Item>

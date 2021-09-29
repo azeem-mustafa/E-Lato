@@ -1,0 +1,45 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins.scss" as *;
+
+.about-us {
+    height: 84vh;
+    @include background-gradient;
+    @include padding-sides;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__logo{
+        padding-bottom: 2rem;
+    }
+
+    &__flex {
+        width: 80%;
+    }
+
+    &-one {
+        padding-bottom: 1rem;
+    }
+
+    &-two {
+        padding-bottom: 1rem;
+    }
+    &-three {
+        padding-bottom: 1rem;
+    }
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__icon {
+        width: 20rem;
+    }
+
+    p {
+        font-size: 1.7rem;
+    }
+}
