@@ -22,7 +22,7 @@ The following is how to use the messaging app:
 
 Select "Create A New Id"
 
-![Step 1](C:\Users\amus2\Downloads\Messaging1.PNG "Step 1")
+![Step 1](/images/Messaging1.PNG "Step 1")
 
 2)
 
