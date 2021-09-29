@@ -106,6 +106,11 @@ class App extends Component {
                             <HeaderTwo token={this.state.jwtToken} />
                             <AboutUs />
                         </Route>
+
+                        <Route path='/classes' exact>
+                            <HeaderTwo token={this.state.jwtToken} />
+                        </Route>
+
                     </Switch>
                     <Footer />
                 </BrowserRouter>

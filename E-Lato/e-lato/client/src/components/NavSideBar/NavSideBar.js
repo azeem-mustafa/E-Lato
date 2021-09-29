@@ -17,13 +17,13 @@ import * as GiIcons from 'react-icons/gi';
     },
     {
         title: 'Find A Class',
-        path: '/students',
+        path: '/classes',
         icon:  <AiIcons.AiFillBook/>,
         cName: 'nav-text'
     },
     {
         title: 'Be A Teacher',
-        path: '/teachers',
+        path: '/login',
         icon: <GiIcons.GiTeacher />,
         cName: 'nav-text'
     }
